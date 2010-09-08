@@ -6,6 +6,8 @@
 
 ## Using Homebrew
 
+### Installing Homebrew
+
 ### Installing Formula
 
 ### Updating
@@ -14,10 +16,30 @@
 
 ## Anatomy of a Formula
 
-### The Formula DSL
+### Overview
 
-### Digging Deeper
+### The Formula DSL
 
 ### Shortcuts and Utilities
 
+## Installation in Depth
+
+### Fetching
+
+### The Homebrew Cache
+
+### Patching
+
+### def install
+
+### Cleaning
+
+### Linking
+
 ## Writing External Commands
+
+### As Ruby
+
+### As Shell Scripts
+
+### Or Even as Python
