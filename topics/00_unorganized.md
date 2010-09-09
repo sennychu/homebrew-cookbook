@@ -28,6 +28,8 @@
 
 ### The Homebrew Cache
 
+### Staging
+
 ### Patching
 
 ### def install
@@ -35,6 +37,8 @@
 ### Cleaning
 
 ### Linking
+
+## Download Strategies
 
 ## Writing External Commands
 
