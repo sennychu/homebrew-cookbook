@@ -50,7 +50,7 @@ Methods to be overridden:
  - `patches` specifies patches
  - `caveats` provides warnings and additional information
 
-### `homepage`
+### homepage
 
 `homepage` is simply a URL for the main page of the project. Some software
 doesn't really have a homepage per se. In those cases, be creative.
@@ -59,7 +59,7 @@ To open the homepage in a browser:
 
     $ brew home foo
 
-### `url` and `head`
+### url and head
 
 `url` and `head` are used to define the "stable" and "unstable" downloads.
 
@@ -133,7 +133,7 @@ download strategy being used.
 The Subversion download strategy also has support for specifying
 separate revisions for the master and externals. (To be documented.)
 
-### `version`
+### version
 
 Homebrew has code to detect version numbers from URLs.
 
@@ -148,7 +148,7 @@ provided explicitly.
 
 Head URLs do not use version numbers, and are always detected as "HEAD".
 
-### `md5` and `sha1`
+### md5 and sha1
 
 Formulae that use file downloads (http, https, ftp) instead of VCS checkouts,
 which is most formulae, need to include a checksum. Supported hash methods are
@@ -161,17 +161,17 @@ includes malicious tampering, but usually it is just to check for silent
 version updates to the downloaded software, which may require updating the
 formula.
 
-### `depends_on`
+### depends_on
 
 Defines dependencies.
 
  - :recommended, :optional
  - :perl, :ruby, :python, :jruby
 
-### `skip_clean`
+### skip_clean
 
  - files, folders, :all
 
-### `keg_only`
+### keg_only
 
  - reasons, :provied\_by\_osx
