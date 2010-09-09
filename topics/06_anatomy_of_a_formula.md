@@ -219,3 +219,11 @@ readline) or when we don't want packages to be picked up by accident by
 other configure scripts (such as gettext).
 
  - reasons, :provied\_by\_osx
+
+### install
+
+### options
+
+### patches
+
+### caveats
