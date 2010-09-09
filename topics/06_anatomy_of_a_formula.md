@@ -20,7 +20,7 @@ At a minimum, a formula contains:
 
  - A `url`
  - A `homepage`
- - An `md5` or `sha1` hash
+ - An `md5` or `sha1` checksum
  - A `def install` method
 
 All formulae ultimately derive from the `formula` class in formula.rb. There
@@ -143,10 +143,10 @@ In the above case the detected version will be "1.8". If the version cannot be
 determined from the URL, or you want to override what was detected, it must be
 provided explicitly.
 
-  url 'http://ftp.gnu.org/gnu/bash/bash-4.1.tar.gz'
-  version '4.1.7'
+    url 'http://ftp.gnu.org/gnu/bash/bash-4.1.tar.gz'
+    version '4.1.7'
 
-Head URLs do not use version numbers, and are always detected as "HEAD".
+Head URLs do not have a version and are always set to "HEAD".
 
 ### md5 and sha1
 
@@ -163,15 +163,59 @@ formula.
 
 ### depends_on
 
-Defines dependencies.
+`depends_on` is used to define dependencies.
 
- - :recommended, :optional
- - :perl, :ruby, :python, :jruby
+A dependency can also be marked as "recommended" or "optional", but these
+currently only act as documentation. Homebrew treats all types of
+dependencies as required.
+
+*Some depedencies from ScummVM.*
+
+    depends_on 'sdl'
+    depends_on 'flac' => :recommended
+    depends_on 'fluid-synth' => :optional
+
+**Note:** You can tell Homebrew to turn off dependency checking:
+
+    $ brew install --ignore-dependencies foo
+
+#### External Dependencies
+
+Homebrew has limited support for specifying external language-specific
+dependencies. Remember that Homebrew encourages the use of language-specific
+package managers such as pip and gem to install language-specific libraries.
+
+If a language-specific dependency is given, Homebrew will try to import that
+module, and give the user an error if it is not installed.
+
+Supported languages are: :perl, :ruby, :jruby, :python
+
+*RabbitMQ depends on the simplejson module, but only on Python 2.4.*
+
+    depends_on 'simplejson' => :python if MACOS_VERSION < 10.6
+
+*Maatkit requires Perl's MySQL driver.*
+
+    depends_on 'DBD::mysql' => :perl
+
+Note that Homebrew will not automatically install these external dependencies.
+Further, formulae that are submitted with a large number of externals are not
+likely to be included in the master branch. (Having lots of externals
+increases the maintenance cost of a formula.)
 
 ### skip_clean
+
+`skip_clean` tells Homebrew not to strip binaries and libraries or remove
+empty folders.
 
  - files, folders, :all
 
 ### keg_only
+
+`keg_only` marks a formula as "keg-only", meaning it won't be symlinked into
+the HOMEBREW\_PREFIX. Such a formula only exists in the Cellar. This is
+typically used when software overrides OS X provided libraries (such as
+readline) or when we don't want packages to be picked up by accident by
+other configure scripts (such as gettext).
 
  - reasons, :provied\_by\_osx
