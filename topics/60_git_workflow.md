@@ -127,3 +127,9 @@ merge will be a fast-forward. Push to master and delete the temporary branch.
     $ git branch -D b
     $ git push upstream
     <close issue or pull request>
+
+After a lot of pulls, you end up with a lot of remote branches that you
+probably don't care about (or want to see in GitX.) I nuke everything
+except "origin" and "upstream" with:
+
+    $ git wipe
