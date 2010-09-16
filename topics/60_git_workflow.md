@@ -21,14 +21,21 @@ recommended default.
 
 My OS X environment is on GitHub: http://github.com/adamv/dotfiles
 
-Of interest here:
+Git aliases and utilities:
 
- * [gh-pick](http://github.com/adamv/dotfiles/blob/master/bin/gh-pick)  
+ * git b: aliased to "git checkout -b"
+ * git remaster: aliased to "git rebase master"
+ * [gh-pick](http://github.com/adamv/dotfiles/blob/master/bin/gh-pick):
    Cherry-picks commits from GitHub commit URLs.
- * [git-ff](http://github.com/adamv/dotfiles/blob/master/bin/git-ff)  
-   Tool for doing fast-forward updates from a remote.
- * [git-wipe](http://github.com/adamv/dotfiles/blob/master/bin/git-wipe)  
+ * [git-ff](http://github.com/adamv/dotfiles/blob/master/bin/git-ff):
+   Tool for doing fast-forward updates from a tracked branch.
+ * [git-wipe](http://github.com/adamv/dotfiles/blob/master/bin/git-wipe):
    Deletes all remotes not named "origin" or "upstream".
+
+In my .gitconfig I set:
+
+    [push]
+      default = current
 
 See also my [PROMPT\_COMMAND](http://github.com/adamv/dotfiles/blob/master/dot.bashrc#L187)
 which adds some Git and Homebrew indicators.
