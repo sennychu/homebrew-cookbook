@@ -123,10 +123,13 @@ merge will be a fast-forward. Push to master and delete the temporary branch.
     $ git remaster -i
     <squash all commits and reword if needed>
     $ git checkout master
-    $ git merge b
-    $ git branch -D b
+    $ git merge b --ff-only
+    $ git branch -d b
     $ git push upstream
     <close issue or pull request>
+
+The "--ff-only" is just a sanity check, to make sure we won't generate
+a merge commit.
 
 After a lot of pulls, you end up with a lot of remote branches that you
 probably don't care about (or want to see in GitX.) I nuke everything
