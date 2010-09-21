@@ -15,7 +15,7 @@ See existing documentation:
 ## Developer Installs
 
  * Fork Homebrew on GitHub
- * Clone your new fork
+ * Clone your new fork. Mine is at ~/homebrew.
  * Symlink ~/homebrew/bin/brew to /usr/local/bin/brew
  * Your cellar will be ~/homebrew/Cellar
  * Your HOMEBREW\_PREFIX will be /usr/local
