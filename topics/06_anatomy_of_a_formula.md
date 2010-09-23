@@ -87,9 +87,9 @@ into VCS checkouts.
 If the wrong download strategy is detected, or a formula needs to use a
 custom strategy, it can be specified with the `:using` keyword.
 
-The value of the `:using` keyword should either be a known VCS symbol,
-as defined int he `VCS_SYMBOLS` mapping in formula.rb, or a class that
-derives from DownloadStrategy.
+The value of the `:using` keyword should either be a known VCS symbol as
+defined in the `VCS_SYMBOLS` mapping in formula.rb, or a class that derives
+from DownloadStrategy.
 
 *Overriding an HTTP download to a SVN checkout.*
 
@@ -117,11 +117,6 @@ To specific a tag, branch, revision, etc., pass an appropriate keyword with
 a string value. The exact keywords supported depend on the specific VCS
 download strategy being used.
 
-*Subversion revision.*
-
-    url 'http://xu4.svn.sourceforge.net/svnroot/xu4/trunk/u4',
-          :revision => '2725'
-
 *Git tag.*
 
     url "git://github.com/erlang/otp.git", :tag => "OTP_R13B04"
@@ -130,8 +125,14 @@ download strategy being used.
 
     head 'git://github.com/adamv/adamem-osx.git', :branch => 'osx-brew'
 
+*Subversion revision.*
+
+    url 'http://xu4.svn.sourceforge.net/svnroot/xu4/trunk/u4',
+          :revision => '2725'
+
 The Subversion download strategy also has support for specifying
-separate revisions for the master and externals. (To be documented.)
+separate revisions for the master and externals. This was needed for
+ffmpeg, but is not currently used by any formulae.
 
 ### version
 
