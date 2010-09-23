@@ -1,5 +1,7 @@
 # The Homebrew Cookbook
 
+*The missing manual for the missing package manager.*
+
 This project exists as additional documentation for using Homebrew and
 creating new Formulae.
 
