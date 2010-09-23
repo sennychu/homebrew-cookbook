@@ -206,10 +206,32 @@ increases the maintenance cost of a formula.)
 
 ### skip_clean
 
+After a formula is compiled and put in the cellar, it goes through a
+"cleaning" step which:
+
+ * Runs strip on any binaries in bin or .dylibs in lib.
+ * Deletes empty folders from the formula's cellar.
+
 `skip_clean` tells Homebrew not to strip binaries and libraries or remove
 empty folders.
 
- - files, folders, :all
+Typically you use this to prevent:
+
+ * empty log folders from being removed.
+ * symbols from being stripped from binaries that depend on them for dynamic loading.
+
+*Keeping initially empty folders around.*
+
+    skip_clean "var/run"
+    skip_clean "var/log"
+
+*Preventing symbol stripping of binaries.*
+
+    skip_clean ['bin', 'lib']
+
+*Skipping everything.*
+
+    skip_clean :all
 
 ### keg_only
 
