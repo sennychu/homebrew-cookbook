@@ -8,3 +8,4 @@ Topics:
  * AWS cross-references
  * Things we try not to depend on
  * Soft deps (MySQL, Postgresql)
+ * Private formulae (glib, subversion)
