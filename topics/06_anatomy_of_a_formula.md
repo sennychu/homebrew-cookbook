@@ -20,7 +20,7 @@ At a minimum, a formula contains:
 
  - A `url`
  - A `homepage`
- - An `md5` or `sha1` checksum
+ - A checksum (`md5`, `sha1` or `sha256`)
  - A `def install` method
 
 All formulae ultimately derive from the `formula` class in formula.rb. There
