@@ -80,10 +80,7 @@ and up-to-date.
 
     $ cd ~/homebrew
     $ git checkout master
-    $ git-ff
-
-The "git-ff" command pulls any commits from upstream and rebases any local
-commits on top of that. This keeps me in sync when other committers add stuff.
+    $ git pull --rebase
 
 At this point, find some interesting commits in the GitHub Issues or
 Pull Requests 2.0, and copy a commit URL to the clipboard.
